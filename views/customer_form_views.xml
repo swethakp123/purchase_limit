@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="customer_form_inherited" model="ir.ui.view">
+        <field name="name">customer.form.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="property_payment_method_id" position="after">
+                <field name="activate_purchase_limit"/>
+                <field name="purchase_limit" invisible="activate_purchase_limit != True"/>
+            </field>
+        </field>
+    </record>
+</odoo>
